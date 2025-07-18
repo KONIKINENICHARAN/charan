@@ -1,16 +1,16 @@
-#include"queue.h"
+#include"stack.h"
 using namespace std;
 int main(){
-	enqueue(10);
-	enqueue(20);
+	push(10);
+	push(20);
 	display();
 	isfull();
 	peek();
-	dequeue();
+	pop();
 	display();
 	isempty();
 	peek();
-	dequeue();
-	dequeue();
+	pop();
+	pop();
 	isempty();
 }
