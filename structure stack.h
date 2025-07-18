@@ -4,15 +4,15 @@
 using namespace std;
 #define MAX 1000
 struct STACK{
-	int arr[MAX];
-	int topidx=-1;
+	int A[MAX];
+	int top=-1;
 	// Push an element into the stack
 	void push(int val){
 		if(isfull()){
 			cout<<"stack overflow\n";
 			return;
 		}
-		arr[++topidx]=val;
+		A[++top]=val;
 	}
 	// Pop the top element
 	int pop(){
@@ -20,7 +20,7 @@ struct STACK{
 			cout<<"stack underflow\n";
 			return -1;
 		}
-		return arr[topidx--];
+		return A[top--];
 	}
 	// Peek at the top element
 	int peek(){
@@ -28,15 +28,15 @@ struct STACK{
 			cout<<"stack is empty\n";
 			return -1;
 		}
-		return arr[topidx];
+		return A[top];
 	}
 	// Check if the stack is empty
 	bool isempty(){
-		return topidx==-1;
+		return top==-1;
 	}
 	// Check if the stack is full
 	bool isfull(){
-		return topidx==MAX - 1;
+		return top==MAX - 1;
 	}
 	// Display all elements
 	void display() {
@@ -44,8 +44,8 @@ struct STACK{
 			cout<<"stack underflow\n";
 			return;
 		}
-		for(int i=topidx;i>=0;i--){
-			cout << arr[i] << " ";
+		for(int i=top;i>=0;i--){
+			cout << A[i] << " ";
 		}
 		cout << "\n";
 	}
